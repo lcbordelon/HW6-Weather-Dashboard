@@ -1,6 +1,6 @@
 var cityInput = document.getElementById("city-input");
 var weatherData = document.getElementById("current-weather-card");
-var fivedayDisplay = document.getElementsByClassName("mb-5 card");
+var fivedayDisplay = document.querySelectorAll("#rowTwo .card.mb-5");
 var searchBtn = document.getElementById("search-btn");
 
 var get5Day = function (event) {
@@ -15,11 +15,25 @@ var get5Day = function (event) {
       console.log("----> Weather data from fetch: \n", weatherData);
 
       //for loop to display weather on all Day cards
-      for (i = 0; i < 4; i++) {
+      for (i = 0; i < 5; i++) {
+        //getting the temp from the API data array
         var tempEl = document.createElement("p");
-        tempEl.textContent = weatherData.list[0].main.temp;
+        tempEl.textContent = "Temperature: " + weatherData.list[i].main.temp;
 
-        document.fivedayDisplay.appendChild(tempEl);
+        //getting the humidity from the API data array
+        var humidEl = document.createElement("p");
+        humidEl.textContent =
+          "Humidity: " + weatherData.list[i].main.humidity + "%";
+
+        //getting the wind speed from the API data array
+        var windspEl = document.createElement("p");
+        windspEl.textContent =
+          "Wind Speed: " + weatherData.list[i].wind.speed + "mph";
+
+        //appending the created weather elements to the Daily Weather cards
+        fivedayDisplay[i].appendChild(tempEl);
+        fivedayDisplay[i].appendChild(humidEl);
+        fivedayDisplay[i].appendChild(windspEl);
       }
     });
 };
