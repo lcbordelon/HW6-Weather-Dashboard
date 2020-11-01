@@ -11,12 +11,15 @@ var get5Day = function (event) {
 
   fetch(openWeatherURL)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((weatherData) => {
+      console.log("----> Weather data from fetch: \n", weatherData);
 
-  var tempEl = document.createElement("p");
-  tempEl.textContent = data.list[0].main.temp;
+      var tempEl = document.createElement("p");
+      tempEl.textContent = weatherData.list[0].main.temp;
 
-  document.getElementById("Day1Card").appendChild(tempEl);
+      document.getElementById("Day1Card").appendChild(tempEl);
+    });
+
   //loop through 5 day weather data to compile 5 day weather card
   // for (var i = 0; i < 5; i++) {
   //create element to display temperature
