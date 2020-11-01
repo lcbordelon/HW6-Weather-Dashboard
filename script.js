@@ -14,33 +14,36 @@ var get5Day = function (event) {
     .then((weatherData) => {
       console.log("----> Weather data from fetch: \n", weatherData);
 
-      var tempEl = document.createElement("p");
-      tempEl.textContent = weatherData.list[0].main.temp;
+      //for loop to display weather on all Day cards
+      for (i = 0; i < 4; i++) {
+        var tempEl = document.createElement("p");
+        tempEl.textContent = weatherData.list[0].main.temp;
 
-      document.getElementById("Day1Card").appendChild(tempEl);
+        document.fivedayDisplay.appendChild(tempEl);
+      }
     });
-
-  //loop through 5 day weather data to compile 5 day weather card
-  // for (var i = 0; i < 5; i++) {
-  //create element to display temperature
-  //   var tempEL = document.getElementById("mb-5 card").createElement("<p>");
-  //   tempEL.textContent = response.list[i].main.temp;
-
-  //   //   addClass("card-text").text("Temperature:" + response.list[i].main.temp);
-  //   //   var card = $("<div>").addClass("card bg-primary text-white");
-
-  //   //create element to display temperature
-  //   var humidEl = $("<p>");
-  //   $("card-text").text("Humidity:" + response.list[i].main.humidity);
-
-  //   var windEl = $("<p>");
-  //   $("card-text").text("Wind Speed:" + response.list[i].wind.speed);
-
-  //   card.append(tempEl, humidEl, windEL);
-
-  //keep doing this for all the parameters and then add to card.append(tempEL,humidEL.....)
-
-  //   });
 };
+
+//loop through 5 day weather data to compile 5 day weather card
+// for (var i = 0; i < 5; i++) {
+//create element to display temperature
+//   var tempEL = document.getElementById("mb-5 card").createElement("<p>");
+//   tempEL.textContent = response.list[i].main.temp;
+
+//   //   addClass("card-text").text("Temperature:" + response.list[i].main.temp);
+//   //   var card = $("<div>").addClass("card bg-primary text-white");
+
+//   //create element to display temperature
+//   var humidEl = $("<p>");
+//   $("card-text").text("Humidity:" + response.list[i].main.humidity);
+
+//   var windEl = $("<p>");
+//   $("card-text").text("Wind Speed:" + response.list[i].wind.speed);
+
+//   card.append(tempEl, humidEl, windEL);
+
+//keep doing this for all the parameters and then add to card.append(tempEL,humidEL.....)
+
+//   });
 
 searchBtn.addEventListener("click", get5Day);
