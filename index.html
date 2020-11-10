@@ -1,93 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Bordelon Weather</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" id="weather-dashboard" href="#"
-        >Weather Dashboard</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-  </head>
-  <body>
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card">
-          <form class="card-body" id="city-form">
-            <h5 class="card-title">Search for a City!</h5>
-            <input class="card-text" id="city-input" placeholder="City Name"></input>
-            <button type="submit" class="btn btn-primary fas fa-search" id="search-btn" onclick=""></button>
-          </form>
+</head>
+
+<body>
+
+    <header class="bg-dark text-light" style="text-align: center;">
+        <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 text-white" style="padding: 1.5rem;">
+                <h4>Search for a city: </h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search City" aria-label="Search City"
+                        aria-describedby="button-addon2" id="search-term">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-light text-dark btn-light  search-button" type="button"
+                            id="button-addon2">Search</button>
+                    </div>
+                </div>
+                <ul id="city-list" style="list-style: none;"></ul>
+            </div>
+            <div class="col-sm-1 mr-n5"></div>
+            <div class="main-content col-md-8" style="padding: 1.5rem;">
+                <div class="jumbotron bg-transparent" id="current-day-forecast"
+                    style="padding-top: 1.5rem; padding-bottom: 1.5rem">
+                </div>
+
+                <div class="jumbotron bg-transparent" style="padding-top: 1.5rem; padding-bottom: 1.5rem">
+                    <div class="row" id="five-day-forecast"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-10">
-        <div class="shadow p-3 mb-5 card" id="current-weather-card">
-          <div class="card-body">
-            <h5 class="card-title">City Weather</h5>
-          </div>
-        </div>
-      </div>
+
+
 
     </div>
 
-    <div class="row" id="rowTwo">
-      <div class="col-md-2" id="append-cities">
-        <!-- placeholder for appended cities -->
-      </div>
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card" id="Day1Card">
-          <h5 class="card-title">Day 1</h5>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card">
-          <h5 class="card-title">Day 2</h5>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card">
-          <h5 class="card-title">Day 3</h5>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card">
-          <h5 class="card-title">Day 4</h5>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="shadow p-3 mb-5 card">
-          <h5 class="card-title">Day 5</h5>
-        </div>
-      </div>
-
     </div>
 
-  </div>
 
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
 
-
-
-
-<script src="script.js"></script>
-  </body>
 </html>
